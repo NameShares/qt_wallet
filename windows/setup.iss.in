@@ -1,7 +1,7 @@
 ; WIN64_DEFINE gets substituted with "define" or "undef"
 #@WIN64_DEFINE@ WIN64
 #define APPNAME "@APP_NAME@"
-#define BITSHARES_ROOT "@BITSHARES_ROOT@"
+#define NAMESHARES_ROOT "@NAMESHARES_ROOT@"
 #define QT_PATH "@QT_PATH@"
 #define OPENSSL_ROOT_DIR "@OPENSSL_ROOT_DIR@"
 #define MSVC_RUNTIME_DIR "@MSVC_RUNTIME_DIR@"
@@ -81,7 +81,7 @@ LanguageCodePage=0
 
 [Files]
 ;Source: README.TXT; DestDir: {app}; Flags: ignoreversion
-Source: {#BITSHARES_ROOT}\bin\{#APPNAME}.exe; DestDir: {app}\bin; Flags: ignoreversion
+Source: {#NAMESHARES_ROOT}\bin\{#APPNAME}.exe; DestDir: {app}\bin; Flags: ignoreversion
 Source: ..\client\RelWithDebInfo\bitshares_client.exe; DestDir: {app}\bin; Flags: ignoreversion
 Source: {#MSVC_RUNTIME_DIR}\msvcr120.dll; DestDir: {app}\bin; Flags: ignoreversion
 Source: {#MSVC_RUNTIME_DIR}\msvcp120.dll; DestDir: {app}\bin; Flags: ignoreversion

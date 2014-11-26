@@ -9,7 +9,7 @@
     $RPC_SERVER_WALLET = "server";
     $RPC_SERVER_WALLET_PASS = "iamtheserver";
 
-    $BITSHARES_USER_NAME = "test-server";
+    $NAMESHARES_USER_NAME = "test-server";
 
 //    $LOGIN_PAGE_DOMAIN_AND_PATH = "Set this if login landing page != this page";
     //END CONFIG
@@ -55,7 +55,7 @@
         if(isset($userAccount["delegate_info"]))
             echo "<p>This is the VIP section, for delegates only.</p>";
     } else {
-        $url = $bitshares->wallet_login_start($BITSHARES_USER_NAME);
+        $url = $bitshares->wallet_login_start($NAMESHARES_USER_NAME);
         $url .= $absolute_url;
         ?>
 NameShares will now prompt you to complete the login in a new window. You may now close this window.

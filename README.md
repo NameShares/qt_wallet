@@ -59,12 +59,12 @@ Download and install Windows binary version of Qt 5.3 into the same folder as na
 
 Edit setenv.bat and add CMAKE_PREFIX_PATH:
 
-set CMAKE_PREFIX_PATH=%BITSHARES_ROOT%\Qt5.3.0_x86\5.3\msvc2013
+set CMAKE_PREFIX_PATH=%NAMESHARES_ROOT%\Qt5.3.0_x86\5.3\msvc2013
 
 
 Add %CMAKE_PREFIX_PATH%\bin to PATH variable:
 
-set PATH=%BITSHARES_ROOT%\bin;%BITSHARES_ROOT%\Cmake\bin;%BITSHARES_ROOT%\boost\stage\lib;%CMAKE_PREFIX_PATH%\bin;%PATH%
+set PATH=%NAMESHARES_ROOT%\bin;%NAMESHARES_ROOT%\Cmake\bin;%NAMESHARES_ROOT%\boost\stage\lib;%CMAKE_PREFIX_PATH%\bin;%PATH%
 
 
 Follow Windows build instructions from BUILD_WIN32.md.

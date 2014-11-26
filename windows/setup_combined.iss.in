@@ -1,6 +1,6 @@
 #define APPNAME "@APP_NAME@"
-#define BITSHARES_ROOT_X86 "binaries\x86"
-#define BITSHARES_ROOT_X64 "binaries\x64"
+#define NAMESHARES_ROOT_X86 "binaries\x86"
+#define NAMESHARES_ROOT_X64 "binaries\x64"
 
 #define QT_PATH_X86 "@QT_PATH_X86@"
 #define QT_PATH_X64 "@QT_PATH_X64@"
@@ -72,11 +72,11 @@ LanguageCodePage=0
 
 [Files]
 ; NameShares binaries
-Source: {#BITSHARES_ROOT_X64}\{#APPNAME}.exe; DestDir: {app}\bin; Flags: ignoreversion; Check: Is64BitInstallMode
-Source: {#BITSHARES_ROOT_X64}\bitshares_client.exe; DestDir: {app}\bin; Flags: ignoreversion; Check: Is64BitInstallMode
+Source: {#NAMESHARES_ROOT_X64}\{#APPNAME}.exe; DestDir: {app}\bin; Flags: ignoreversion; Check: Is64BitInstallMode
+Source: {#NAMESHARES_ROOT_X64}\bitshares_client.exe; DestDir: {app}\bin; Flags: ignoreversion; Check: Is64BitInstallMode
 
-Source: {#BITSHARES_ROOT_X86}\{#APPNAME}.exe; DestDir: {app}\bin; Flags: ignoreversion; Check: not Is64BitInstallMode
-Source: {#BITSHARES_ROOT_X86}\bitshares_client.exe; DestDir: {app}\bin; Flags: ignoreversion; Check: not Is64BitInstallMode
+Source: {#NAMESHARES_ROOT_X86}\{#APPNAME}.exe; DestDir: {app}\bin; Flags: ignoreversion; Check: not Is64BitInstallMode
+Source: {#NAMESHARES_ROOT_X86}\bitshares_client.exe; DestDir: {app}\bin; Flags: ignoreversion; Check: not Is64BitInstallMode
 
 ; VC_RUNTIME and VCPP_RUNTIME get substituted with the path to msvcr120.dll and msvcp120.dll
 Source: {#MSVC_RUNTIME_DIR_X64}\msvcr120.dll; DestDir: {app}\bin; Flags: ignoreversion; Check: Is64BitInstallMode
