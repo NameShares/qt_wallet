@@ -44,7 +44,7 @@
 #endif
 
 MainWindow::MainWindow()
-  : _settings("BitShares", BTS_BLOCKCHAIN_NAME),
+  : _settings("NameShares", BTS_BLOCKCHAIN_NAME),
     _trayIcon(nullptr),
     _updateChecker(new QTimer(this)),
     _clientWrapper(nullptr)

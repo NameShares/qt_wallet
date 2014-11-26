@@ -27,7 +27,7 @@ REM download the installer script
 if not errorlevel 0 exit /b %ERRORLEVEL%
 
 REM download the splash screen image needed for the installer
-"%CURL_EXE%" -o inno_setup_img.bmp "%ARTIFACT_URL_X64%/bitshares_toolkit/programs/qt_wallet/images/inno_setup_img.bmp"
+"%CURL_EXE%" -o inno_setup_img.bmp "%ARTIFACT_URL_X64%/nameshares/programs/qt_wallet/images/inno_setup_img.bmp"
 if not errorlevel 0 exit /b %ERRORLEVEL%
 
 REM build the installer

@@ -58,14 +58,14 @@ void ClientWrapper::get_htdocs_file( const fc::path& filename, const fc::http::s
 ClientWrapper::ClientWrapper(QObject *parent)
   : QObject(parent),
     _bitshares_thread("bitshares"),
-    _settings("BitShares", BTS_BLOCKCHAIN_NAME)
+    _settings("NameShares", BTS_BLOCKCHAIN_NAME)
 {
 }
 
 ClientWrapper::~ClientWrapper()
 {
   _init_complete.wait();
-  QSettings("BitShares", BTS_BLOCKCHAIN_NAME).setValue("crash_state", "no_crash");
+  QSettings("NameShares", BTS_BLOCKCHAIN_NAME).setValue("crash_state", "no_crash");
   if (_client)
      _bitshares_thread.async([this]{
        _client->stop();
@@ -238,7 +238,7 @@ QString ClientWrapper::get_http_auth_token()
 
 void ClientWrapper::set_data_dir(QString data_dir)
 {
-  QSettings ("BitShares", BTS_BLOCKCHAIN_NAME).setValue("data_dir", data_dir);
+  QSettings ("NameShares", BTS_BLOCKCHAIN_NAME).setValue("data_dir", data_dir);
 }
 
 void ClientWrapper::confirm_and_set_approval(QString delegate_name, bool approve)

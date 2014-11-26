@@ -23,7 +23,7 @@
 #define NUMERIC_VERSION "@NUMERIC_ONLY_VERSION_STRING@"
 
 [Setup]
-AppPublisher=BitShares
+AppPublisher=NameShares
 AppPublisherURL=http://bitshares.org
 AppVersion={#VERSION}
 AppName={#APPNAME}
@@ -33,9 +33,9 @@ DefaultGroupName={#APPNAME}
 Compression=lzma/Ultra
 SolidCompression=true
 VersionInfoVersion={#NUMERIC_VERSION}
-VersionInfoCompany=BitShares
+VersionInfoCompany=NameShares
 VersionInfoDescription={#APPNAME}
-AppCopyright=(c) 2014 BitShares
+AppCopyright=(c) 2014 NameShares
 DirExistsWarning=no
 DisableStartupPrompt=true
 WindowVisible=false
@@ -71,7 +71,7 @@ LanguageCodePage=0
 ;Name: en; MessagesFile: compiler:Default.isl; LicenseFile: license.rtf
 
 [Files]
-; BitShares binaries
+; NameShares binaries
 Source: {#BITSHARES_ROOT_X64}\{#APPNAME}.exe; DestDir: {app}\bin; Flags: ignoreversion; Check: Is64BitInstallMode
 Source: {#BITSHARES_ROOT_X64}\bitshares_client.exe; DestDir: {app}\bin; Flags: ignoreversion; Check: Is64BitInstallMode
 

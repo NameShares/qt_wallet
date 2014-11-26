@@ -1,4 +1,4 @@
-<//-- This is a proof of concept web application for BitShares logins. -->
+<//-- This is a proof of concept web application for NameShares logins. -->
 <?PHP
     //CONFIG
     $RPC_SERVER_USER = "a";
@@ -58,7 +58,7 @@
         $url = $bitshares->wallet_login_start($BITSHARES_USER_NAME);
         $url .= $absolute_url;
         ?>
-BitShares will now prompt you to complete the login in a new window. You may now close this window.
+NameShares will now prompt you to complete the login in a new window. You may now close this window.
 <script type="text/javascript">location.href="<?=$url?>";</script>
         <?PHP
     }

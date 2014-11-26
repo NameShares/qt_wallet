@@ -12,7 +12,7 @@ class QLocalServer;
 
 /** Subclass needed to reimplement 'notify' method and catch unknown exceptions.
 */
-class BitSharesApp : protected QApplication
+class NameSharesApp : protected QApplication
 {
   Q_OBJECT
 
@@ -23,8 +23,8 @@ class BitSharesApp : protected QApplication
     static int  run(int& argc, char** argv);
 
   private:
-    BitSharesApp(int& argc, char** argv);
-    virtual ~BitSharesApp();
+    NameSharesApp(int& argc, char** argv);
+    virtual ~NameSharesApp();
     int run();
 
     void prepareStartupSequence(ClientWrapper* client, Html5Viewer* viewer, MainWindow* mainWindow, QSplashScreen* splash);
@@ -39,5 +39,5 @@ class BitSharesApp : protected QApplication
   
   /// Class attributes;
   private:
-    static BitSharesApp* _instance;
+    static NameSharesApp* _instance;
 };

@@ -29,7 +29,7 @@
 #define NUMERIC_VERSION "@NUMERIC_ONLY_VERSION_STRING@"
 
 [Setup]
-AppPublisher=BitShares
+AppPublisher=NameShares
 AppPublisherURL=http://bitshares.org
 AppVersion={#VERSION}
 AppName={#APPNAME}{#PLATFORM_TITLE}
@@ -39,9 +39,9 @@ DefaultGroupName={#APPNAME}
 Compression=lzma/Ultra
 SolidCompression=true
 VersionInfoVersion={#NUMERIC_VERSION}
-VersionInfoCompany=BitShares
+VersionInfoCompany=NameShares
 VersionInfoDescription={#APPNAME}
-AppCopyright=(c) 2014 BitShares
+AppCopyright=(c) 2014 NameShares
 DirExistsWarning=no
 DisableStartupPrompt=true
 WindowVisible=false
