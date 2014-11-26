@@ -30,7 +30,7 @@
 
 [Setup]
 AppPublisher=NameShares
-AppPublisherURL=http://bitshares.org
+AppPublisherURL=https://nameshares.net
 AppVersion={#VERSION}
 AppName={#APPNAME}{#PLATFORM_TITLE}
 AppVerName={#APPNAME}{#PLATFORM_TITLE} {#VERSION}
@@ -45,8 +45,8 @@ AppCopyright=(c) 2014 NameShares
 DirExistsWarning=no
 DisableStartupPrompt=true
 WindowVisible=false
-AppSupportURL=http://bitshares.org
-AppUpdatesURL=http://bitshares.org
+AppSupportURL=https://nameshares.net
+AppUpdatesURL=https://nameshares.net
 ;AppReadmeFile={app}\README.TXT
 ShowLanguageDialog=no
 LanguageDetectionMethod=none
@@ -82,7 +82,7 @@ LanguageCodePage=0
 [Files]
 ;Source: README.TXT; DestDir: {app}; Flags: ignoreversion
 Source: {#NAMESHARES_ROOT}\bin\{#APPNAME}.exe; DestDir: {app}\bin; Flags: ignoreversion
-Source: ..\client\RelWithDebInfo\bitshares_client.exe; DestDir: {app}\bin; Flags: ignoreversion
+Source: ..\client\RelWithDebInfo\nameshares_client.exe; DestDir: {app}\bin; Flags: ignoreversion
 Source: {#MSVC_RUNTIME_DIR}\msvcr120.dll; DestDir: {app}\bin; Flags: ignoreversion
 Source: {#MSVC_RUNTIME_DIR}\msvcp120.dll; DestDir: {app}\bin; Flags: ignoreversion
 Source: {#OPENSSL_ROOT_DIR}\ssl\openssl.cnf; DestDir: {app}\bin; Flags: ignoreversion

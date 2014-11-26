@@ -2,7 +2,7 @@ setlocal
 set CURL_EXE=@CURL_EXE@
 
 set BINARIES_BUILD_URL=@JENKINS_URL@
-if [%BINARIES_BUILD_URL%] == [] (set BINARIES_BUILD_URL=http://jenkins.syncad.com/job/bitsharesx_win_tags/lastBuild/)
+if [%BINARIES_BUILD_URL%] == [] (set BINARIES_BUILD_URL=http://jenkins.syncad.com/job/namesharesx_win_tags/lastBuild/)
 
 mkdir binaries
 
@@ -11,7 +11,7 @@ mkdir binaries\x86
 set ARTIFACT_URL_X86=%BINARIES_BUILD_URL%PLATFORM=win32/artifact/
 "%CURL_EXE%" -o binaries\x86\@APP_NAME@.exe "%ARTIFACT_URL_X86%build/programs/qt_wallet/bin/@APP_NAME@.exe"
 if not errorlevel 0 exit /b %ERRORLEVEL%
-"%CURL_EXE%" -o binaries\x86\bitshares_client.exe "%ARTIFACT_URL_X86%build/programs/client/RelWithDebInfo/bitshares_client.exe"
+"%CURL_EXE%" -o binaries\x86\nameshares_client.exe "%ARTIFACT_URL_X86%build/programs/client/RelWithDebInfo/nameshares_client.exe"
 if not errorlevel 0 exit /b %ERRORLEVEL%
 
 REM download the 64-bit binaries
@@ -19,7 +19,7 @@ mkdir binaries\x64
 set ARTIFACT_URL_X64=%BINARIES_BUILD_URL%PLATFORM=win64/artifact/
 "%CURL_EXE%" -o binaries\x64\@APP_NAME@.exe "%ARTIFACT_URL_X64%build/programs/qt_wallet/bin/@APP_NAME@.exe"
 if not errorlevel 0 exit /b %ERRORLEVEL%
-"%CURL_EXE%" -o binaries\x64\bitshares_client.exe "%ARTIFACT_URL_X64%build/programs/client/RelWithDebInfo/bitshares_client.exe"
+"%CURL_EXE%" -o binaries\x64\nameshares_client.exe "%ARTIFACT_URL_X64%build/programs/client/RelWithDebInfo/nameshares_client.exe"
 if not errorlevel 0 exit /b %ERRORLEVEL%
 
 REM download the installer script

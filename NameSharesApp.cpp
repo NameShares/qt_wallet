@@ -292,9 +292,9 @@ int NameSharesApp::run(int& argc, char** argv)
    installCrashRptHandler(APP_NAME, CreateNameSharesVersionNumberString().c_str());
 
    NameSharesApp app(argc, argv);
-   QTranslator bitsharesTranslator;
-   bitsharesTranslator.load(QLocale::system().name(), QStringLiteral(":/"));
-   app.installTranslator(&bitsharesTranslator);
+   QTranslator namesharesTranslator;
+   namesharesTranslator.load(QLocale::system().name(), QStringLiteral(":/"));
+   app.installTranslator(&namesharesTranslator);
 
 #ifdef __APPLE__
    QDir systemPlugins("/Library/Internet Plug-Ins");
@@ -323,7 +323,7 @@ int NameSharesApp::run(int& argc, char** argv)
 int NameSharesApp::run()
 {
    setOrganizationName("NameShares");
-   setOrganizationDomain("bitshares.org");
+   setOrganizationDomain("nameshares.net");
    setApplicationName(BTS_BLOCKCHAIN_NAME);
 
    //This works around Qt bug 22410, which causes a crash when repeatedly clicking a QComboBox
@@ -460,7 +460,7 @@ void NameSharesApp::prepareStartupSequence(ClientWrapper* client, Html5Viewer* v
 
       //Rebirth of the magic unicorn: When the page is reloaded, the magic unicorn dies. Make a new one.
       viewer->webView()->page()->mainFrame()->addToJavaScriptWindowObject("application", mainWindow);
-      viewer->webView()->page()->mainFrame()->addToJavaScriptWindowObject("bitshares", client);
+      viewer->webView()->page()->mainFrame()->addToJavaScriptWindowObject("nameshares", client);
       viewer->webView()->page()->mainFrame()->addToJavaScriptWindowObject("magic_unicorn", new Utilities, QWebFrame::ScriptOwnership);
    });
    QObject::connect(viewer->webView()->page()->networkAccessManager(), &QNetworkAccessManager::authenticationRequired,

@@ -66,8 +66,8 @@ ADD_DEFINITIONS(-DQT_NO_KEYWORDS)
 
 set( SOURCES
   htdocs.qrc
-  bitshares.qrc
-  qrc_bitshares.cpp
+  nameshares.qrc
+  qrc_nameshares.cpp
   qrc_htdocs.cpp
   main.cpp
   ClientWrapper.cpp
@@ -75,7 +75,7 @@ set( SOURCES
   MainWindow.cpp
   NameSharesApp.cpp
   html5viewer/html5viewer.cpp
-  images/bitshares.icns
+  images/nameshares.icns
 )
 
 file( GLOB TS_FILES translations/*.ts )
@@ -94,12 +94,12 @@ set( CPACK_PACKAGE_FILE_NAME ${CPACK_BUNDLE_NAME} )
 get_filename_component( QT_PATH ${Qt5Core_DIR}/../../../ ABSOLUTE )
 
 IF( APPLE )
-    set ( OSX_ICON_FILE "${CMAKE_CURRENT_SOURCE_DIR}/images/bitshares.icns" )
+    set ( OSX_ICON_FILE "${CMAKE_CURRENT_SOURCE_DIR}/images/nameshares.icns" )
     SET_SOURCE_FILES_PROPERTIES( "${OSX_ICON_FILE}" PROPERTIES MACOSX_PACKAGE_LOCATION Resources )
     SET( MACOSX_BUNDLE_BUNDLE_NAME ${CPACK_BUNDLE_NAME} )
     SET( MACOSX_BUNDLE_EXECUTABLE_NAME ${CPACK_BUNDLE_NAME} )
-    SET( MACOSX_BUNDLE_GUI_IDENTIFIER "org.bitshares.bts" )
-    SET( MACOSX_BUNDLE_ICON_FILE "bitshares.icns" )
+    SET( MACOSX_BUNDLE_GUI_IDENTIFIER "org.nameshares.bts" )
+    SET( MACOSX_BUNDLE_ICON_FILE "nameshares.icns" )
     SET( MACOSX_BUNDLE_INFO_STRING "NameShares v${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_PATCH}" )
     SET( MACOSX_BUNDLE_SHORT_VERSION_STRING "${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_PATCH}" )
     SET( MACOSX_BUNDLE_LONG_VERSION_STRING "${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_PATCH}" )
@@ -107,7 +107,7 @@ IF( APPLE )
     SET( MACOSX_BUNDLE_COPYRIGHT "(C) 2014 NameShares" )
     SET( MACOSX_BUNDLE_URL_HANDLER_NAME "${MACOSX_BUNDLE_GUI_IDENTIFIER}" )
     SET( MACOSX_BUNDLE_URL_HANDLER_SCHEME "${CUSTOM_URL_SCHEME}" )
-    set_source_files_properties("images/bitshares.icns" PROPERTIES MACOSX_PACKAGE_LOCATION Resources)
+    set_source_files_properties("images/nameshares.icns" PROPERTIES MACOSX_PACKAGE_LOCATION Resources)
 ENDIF()
 
 IF( "${CMAKE_SYSTEM_NAME}" MATCHES "Linux" )
@@ -240,11 +240,11 @@ ENDIF()
 # and that file is generated into the build directory, so we must copy the .qrc and any other
 # non-generated files to the build directory to allow them to be compiled together.
 # Set up a pre-build step to do this:
-set(static_bitshares_resource_files bitshares.qrc
+set(static_nameshares_resource_files nameshares.qrc
                                     images/splash_screen.jpg
                                     images/qtapp.ico
                                     images/tray_icon.png)
-foreach(static_resource_file ${static_bitshares_resource_files})
+foreach(static_resource_file ${static_nameshares_resource_files})
   get_filename_component(static_resource_file_path "${static_resource_file}" DIRECTORY)
   set(PRE_BUILD_STEP_COMMANDS ${PRE_BUILD_STEP_COMMANDS}
       COMMAND ${CMAKE_COMMAND} -E make_directory "${CMAKE_CURRENT_BINARY_DIR}/${static_resource_file_path}"
@@ -254,9 +254,9 @@ endforeach()
 # Also copy the .qrc file over manually whenever cmake is run, otherwise CMake will errror
 # on the QT5_ADD_RESOURCES() line that references a file that doesn't yet exist
 file(MAKE_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}")
-file(COPY "${CMAKE_CURRENT_SOURCE_DIR}/bitshares.qrc" DESTINATION "${CMAKE_CURRENT_BINARY_DIR}")
+file(COPY "${CMAKE_CURRENT_SOURCE_DIR}/nameshares.qrc" DESTINATION "${CMAKE_CURRENT_BINARY_DIR}")
 
-QT5_ADD_RESOURCES( NameSharesQRC  "${CMAKE_CURRENT_BINARY_DIR}/bitshares.qrc" )
+QT5_ADD_RESOURCES( NameSharesQRC  "${CMAKE_CURRENT_BINARY_DIR}/nameshares.qrc" )
 QT5_ADD_RESOURCES( HTDOCS  htdocs.qrc )
 
 # Use the Widgets module from Qt 5.

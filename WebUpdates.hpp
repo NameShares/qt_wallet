@@ -38,7 +38,7 @@ struct WebUpdateManifest
         //changelog, known issues, etc.
         std::string releaseNotes;
 
-        //Full URL (i.e. https://bitshares.org/toolkit/updates/0.2.4-c.pak)
+        //Full URL (i.e. https://nameshares.net/toolkit/updates/0.2.4-c.pak)
         //to update package.
         std::string updatePackageUrl;
 

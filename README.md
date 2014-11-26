@@ -21,7 +21,7 @@ Note that the web wallet is expected to be in .../nameshares/programs/web_wallet
 by using the 'forcebuildweb' rule, which will delete the htdocs folder and then rebuild.
 
 If there were no compilation errors, the executable will be located in programs/qt_wallet
-Now you need to run it in a way similar to bitshares_client - it accepts the same command line parameters as bitshares_client or reads them from config.json.
+Now you need to run it in a way similar to nameshares_client - it accepts the same command line parameters as nameshares_client or reads them from config.json.
 
 To create installation package, type:
 ```
