@@ -57,17 +57,17 @@ void ClientWrapper::get_htdocs_file( const fc::path& filename, const fc::http::s
 
 ClientWrapper::ClientWrapper(QObject *parent)
   : QObject(parent),
-    _bitshares_thread("bitshares"),
-    _settings("BitShares", BTS_BLOCKCHAIN_NAME)
+    _nameshares_thread("nameshares"),
+    _settings("NameShares", BTS_BLOCKCHAIN_NAME)
 {
 }
 
 ClientWrapper::~ClientWrapper()
 {
   _init_complete.wait();
-  QSettings("BitShares", BTS_BLOCKCHAIN_NAME).setValue("crash_state", "no_crash");
+  QSettings("NameShares", BTS_BLOCKCHAIN_NAME).setValue("crash_state", "no_crash");
   if (_client)
-     _bitshares_thread.async([this]{
+     _nameshares_thread.async([this]{
        _client->stop();
        /*
        _client->wallet_close();
@@ -138,7 +138,7 @@ void ClientWrapper::initialize(INotifier* notifier)
 
   fc::thread* main_thread = &fc::thread::current();
 
-  _init_complete = _bitshares_thread.async( [=](){
+  _init_complete = _nameshares_thread.async( [=](){
     try
     {
       main_thread->async( [&]{ Q_EMIT status_update(tr("Starting %1").arg(qApp->applicationName())); });
@@ -223,7 +223,7 @@ QUrl ClientWrapper::http_url() const
 
 QVariant ClientWrapper::get_info(  )
 {
-  fc::variant_object result = _bitshares_thread.async( [this](){ return _client->get_info(); }).wait();
+  fc::variant_object result = _nameshares_thread.async( [this](){ return _client->get_info(); }).wait();
   std::string sresult = fc::json::to_string( result );
   return QJsonDocument::fromJson( QByteArray( sresult.c_str(), sresult.length() ) ).toVariant();
 }
@@ -238,7 +238,7 @@ QString ClientWrapper::get_http_auth_token()
 
 void ClientWrapper::set_data_dir(QString data_dir)
 {
-  QSettings ("BitShares", BTS_BLOCKCHAIN_NAME).setValue("data_dir", data_dir);
+  QSettings ("NameShares", BTS_BLOCKCHAIN_NAME).setValue("data_dir", data_dir);
 }
 
 void ClientWrapper::confirm_and_set_approval(QString delegate_name, bool approve)

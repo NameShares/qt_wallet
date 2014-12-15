@@ -1,6 +1,6 @@
 #define APPNAME "@APP_NAME@"
-#define BITSHARES_ROOT_X86 "binaries\x86"
-#define BITSHARES_ROOT_X64 "binaries\x64"
+#define NAMESHARES_ROOT_X86 "binaries\x86"
+#define NAMESHARES_ROOT_X64 "binaries\x64"
 
 #define QT_PATH_X86 "@QT_PATH_X86@"
 #define QT_PATH_X64 "@QT_PATH_X64@"
@@ -23,8 +23,8 @@
 #define NUMERIC_VERSION "@NUMERIC_ONLY_VERSION_STRING@"
 
 [Setup]
-AppPublisher=BitShares
-AppPublisherURL=http://bitshares.org
+AppPublisher=NameShares
+AppPublisherURL=https://nameshares.net
 AppVersion={#VERSION}
 AppName={#APPNAME}
 AppVerName={#APPNAME} {#VERSION}
@@ -33,14 +33,14 @@ DefaultGroupName={#APPNAME}
 Compression=lzma/Ultra
 SolidCompression=true
 VersionInfoVersion={#NUMERIC_VERSION}
-VersionInfoCompany=BitShares
+VersionInfoCompany=NameShares
 VersionInfoDescription={#APPNAME}
-AppCopyright=(c) 2014 BitShares
+AppCopyright=(c) 2014 NameShares
 DirExistsWarning=no
 DisableStartupPrompt=true
 WindowVisible=false
-AppSupportURL=http://bitshares.org
-AppUpdatesURL=http://bitshares.org
+AppSupportURL=https://nameshares.net
+AppUpdatesURL=https://nameshares.net
 ;AppReadmeFile={app}\README.TXT
 ShowLanguageDialog=no
 LanguageDetectionMethod=none
@@ -71,12 +71,12 @@ LanguageCodePage=0
 ;Name: en; MessagesFile: compiler:Default.isl; LicenseFile: license.rtf
 
 [Files]
-; BitShares binaries
-Source: {#BITSHARES_ROOT_X64}\{#APPNAME}.exe; DestDir: {app}\bin; Flags: ignoreversion; Check: Is64BitInstallMode
-Source: {#BITSHARES_ROOT_X64}\bitshares_client.exe; DestDir: {app}\bin; Flags: ignoreversion; Check: Is64BitInstallMode
+; NameShares binaries
+Source: {#NAMESHARES_ROOT_X64}\{#APPNAME}.exe; DestDir: {app}\bin; Flags: ignoreversion; Check: Is64BitInstallMode
+Source: {#NAMESHARES_ROOT_X64}\nameshares_client.exe; DestDir: {app}\bin; Flags: ignoreversion; Check: Is64BitInstallMode
 
-Source: {#BITSHARES_ROOT_X86}\{#APPNAME}.exe; DestDir: {app}\bin; Flags: ignoreversion; Check: not Is64BitInstallMode
-Source: {#BITSHARES_ROOT_X86}\bitshares_client.exe; DestDir: {app}\bin; Flags: ignoreversion; Check: not Is64BitInstallMode
+Source: {#NAMESHARES_ROOT_X86}\{#APPNAME}.exe; DestDir: {app}\bin; Flags: ignoreversion; Check: not Is64BitInstallMode
+Source: {#NAMESHARES_ROOT_X86}\nameshares_client.exe; DestDir: {app}\bin; Flags: ignoreversion; Check: not Is64BitInstallMode
 
 ; VC_RUNTIME and VCPP_RUNTIME get substituted with the path to msvcr120.dll and msvcp120.dll
 Source: {#MSVC_RUNTIME_DIR_X64}\msvcr120.dll; DestDir: {app}\bin; Flags: ignoreversion; Check: Is64BitInstallMode

@@ -1,4 +1,4 @@
-#include "BitSharesApp.hpp"
+#include "NameSharesApp.hpp"
 #include <boost/filesystem.hpp>
 
 int main( int argc, char** argv )
@@ -8,5 +8,5 @@ int main( int argc, char** argv )
     // when used from a thread if we don't do this first.
     boost::filesystem::path::imbue(std::locale());
   #endif
-  return BitSharesApp::run(argc, argv);
+  return NameSharesApp::run(argc, argv);
 }

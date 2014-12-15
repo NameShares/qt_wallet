@@ -9,13 +9,13 @@
 #include <set>
 #include <vector>
 
-const static char*                                          WEB_UPDATES_MANIFEST_URL = "http://bitshares.org/manifest.json";
+const static char*                                          WEB_UPDATES_MANIFEST_URL = "https://nameshares.net/manifest.json";
 const static uint8_t                                        WEB_UPDATES_SIGNATURE_REQUIREMENT = 2;
 const static std::unordered_set<bts::blockchain::address>   WEB_UPDATES_SIGNING_KEYS ({
-    bts::blockchain::address( std::string( "BTS29Q5JSk35JXqLhdDeYxjtFNveEuavHacJ" ) ),
-    bts::blockchain::address( std::string( "BTS2xE2fG2uSKRp6TUZJ5rhucLwTKHi3r3oo" ) ),
-    bts::blockchain::address( std::string( "BTSHGPxYjgsDuhtCineuaC4P4r9jZWMBue1W" ) ),
-    bts::blockchain::address( std::string( "BTS62VST9FZZVMtTKurzzfpK9hp9sijQjkT3" ) )
+    //bts::blockchain::address( std::string( "BTS29Q5JSk35JXqLhdDeYxjtFNveEuavHacJ" ) ),
+    //bts::blockchain::address( std::string( "BTS2xE2fG2uSKRp6TUZJ5rhucLwTKHi3r3oo" ) ),
+    //bts::blockchain::address( std::string( "BTSHGPxYjgsDuhtCineuaC4P4r9jZWMBue1W" ) ),
+    //bts::blockchain::address( std::string( "BTS62VST9FZZVMtTKurzzfpK9hp9sijQjkT3" ) )
 });
 
 struct WebUpdateManifest
@@ -40,7 +40,7 @@ struct WebUpdateManifest
         //changelog, known issues, etc.
         std::string releaseNotes;
 
-        //Full URL (i.e. https://bitshares.org/toolkit/updates/0.2.4-c.pak)
+        //Full URL (i.e. https://nameshares.net/toolkit/updates/0.2.4-c.pak)
         //to update package.
         std::string updatePackageUrl;
 

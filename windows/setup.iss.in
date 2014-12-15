@@ -1,7 +1,7 @@
 ; WIN64_DEFINE gets substituted with "define" or "undef"
 #@WIN64_DEFINE@ WIN64
 #define APPNAME "@APP_NAME@"
-#define BITSHARES_ROOT "@BITSHARES_ROOT@"
+#define NAMESHARES_ROOT "@NAMESHARES_ROOT@"
 #define QT_PATH "@QT_PATH@"
 #define OPENSSL_ROOT_DIR "@OPENSSL_ROOT_DIR@"
 #define MSVC_RUNTIME_DIR "@MSVC_RUNTIME_DIR@"
@@ -29,8 +29,8 @@
 #define NUMERIC_VERSION "@NUMERIC_ONLY_VERSION_STRING@"
 
 [Setup]
-AppPublisher=BitShares
-AppPublisherURL=http://bitshares.org
+AppPublisher=NameShares
+AppPublisherURL=https://nameshares.net
 AppVersion={#VERSION}
 AppName={#APPNAME}{#PLATFORM_TITLE}
 AppVerName={#APPNAME}{#PLATFORM_TITLE} {#VERSION}
@@ -39,14 +39,14 @@ DefaultGroupName={#APPNAME}
 Compression=lzma/Ultra
 SolidCompression=true
 VersionInfoVersion={#NUMERIC_VERSION}
-VersionInfoCompany=BitShares
+VersionInfoCompany=NameShares
 VersionInfoDescription={#APPNAME}
-AppCopyright=(c) 2014 BitShares
+AppCopyright=(c) 2014 NameShares
 DirExistsWarning=no
 DisableStartupPrompt=true
 WindowVisible=false
-AppSupportURL=http://bitshares.org
-AppUpdatesURL=http://bitshares.org
+AppSupportURL=https://nameshares.net
+AppUpdatesURL=https://nameshares.net
 ;AppReadmeFile={app}\README.TXT
 ShowLanguageDialog=no
 LanguageDetectionMethod=none
@@ -81,8 +81,8 @@ LanguageCodePage=0
 
 [Files]
 ;Source: README.TXT; DestDir: {app}; Flags: ignoreversion
-Source: {#BITSHARES_ROOT}\bin\{#APPNAME}.exe; DestDir: {app}\bin; Flags: ignoreversion
-Source: ..\client\RelWithDebInfo\bitshares_client.exe; DestDir: {app}\bin; Flags: ignoreversion
+Source: {#NAMESHARES_ROOT}\bin\{#APPNAME}.exe; DestDir: {app}\bin; Flags: ignoreversion
+Source: ..\client\RelWithDebInfo\nameshares_client.exe; DestDir: {app}\bin; Flags: ignoreversion
 Source: {#MSVC_RUNTIME_DIR}\msvcr120.dll; DestDir: {app}\bin; Flags: ignoreversion
 Source: {#MSVC_RUNTIME_DIR}\msvcp120.dll; DestDir: {app}\bin; Flags: ignoreversion
 Source: {#OPENSSL_ROOT_DIR}\ssl\openssl.cnf; DestDir: {app}\bin; Flags: ignoreversion

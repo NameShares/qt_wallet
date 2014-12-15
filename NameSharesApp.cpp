@@ -1,4 +1,4 @@
-#include "BitSharesApp.hpp"
+#include "NameSharesApp.hpp"
 
 #include "html5viewer/html5viewer.h"
 #include "ClientWrapper.hpp"
@@ -263,16 +263,16 @@ void uninstallCrashRptHandler()
 }
 #endif
 
-BitSharesApp* BitSharesApp::_instance = nullptr;
+NameSharesApp* NameSharesApp::_instance = nullptr;
 
-#define APP_NAME "BitShares"
+#define APP_NAME "NameShares"
 
-static std::string CreateBitSharesVersionNumberString()
+static std::string CreateNameSharesVersionNumberString()
 {
    return bts::client::version_info()["client_version"].as_string();
 }
 
-BitSharesApp::BitSharesApp(int& argc, char** argv)
+NameSharesApp::NameSharesApp(int& argc, char** argv)
    :QApplication(argc, argv)
 {
    assert(_instance == nullptr && "Only one instance allowed at time");
@@ -281,20 +281,20 @@ BitSharesApp::BitSharesApp(int& argc, char** argv)
    QApplication::setWindowIcon(QIcon(":/images/qtapp.ico"));
 }
 
-BitSharesApp::~BitSharesApp()
+NameSharesApp::~NameSharesApp()
 {
    assert(_instance == this && "Only one instance allowed at time");
    _instance = nullptr;
 }
 
-int BitSharesApp::run(int& argc, char** argv)
+int NameSharesApp::run(int& argc, char** argv)
 {
-   installCrashRptHandler(APP_NAME, CreateBitSharesVersionNumberString().c_str());
+   installCrashRptHandler(APP_NAME, CreateNameSharesVersionNumberString().c_str());
 
-   BitSharesApp app(argc, argv);
-   QTranslator bitsharesTranslator;
-   bitsharesTranslator.load(QLocale::system().name(), QStringLiteral(":/"));
-   app.installTranslator(&bitsharesTranslator);
+   NameSharesApp app(argc, argv);
+   QTranslator namesharesTranslator;
+   namesharesTranslator.load(QLocale::system().name(), QStringLiteral(":/"));
+   app.installTranslator(&namesharesTranslator);
 
 #ifdef __APPLE__
    QDir systemPlugins("/Library/Internet Plug-Ins");
@@ -320,10 +320,10 @@ int BitSharesApp::run(int& argc, char** argv)
    return ec;
 }
 
-int BitSharesApp::run()
+int NameSharesApp::run()
 {
-   setOrganizationName("BitShares");
-   setOrganizationDomain("bitshares.org");
+   setOrganizationName("NameShares");
+   setOrganizationDomain("nameshares.net");
    setApplicationName(BTS_BLOCKCHAIN_NAME);
 
    //This works around Qt bug 22410, which causes a crash when repeatedly clicking a QComboBox
@@ -447,7 +447,7 @@ void setupMenus(ClientWrapper* client, MainWindow* mainWindow)
    accountMenu->addAction(QApplication::tr("New Contact"), mainWindow, SLOT(goToAddContact()), QKeySequence(QApplication::tr("Ctrl+Shift+N")));
 }
 
-void BitSharesApp::prepareStartupSequence(ClientWrapper* client, Html5Viewer* viewer, MainWindow* mainWindow, QSplashScreen* splash)
+void NameSharesApp::prepareStartupSequence(ClientWrapper* client, Html5Viewer* viewer, MainWindow* mainWindow, QSplashScreen* splash)
 {
    viewer->connect(viewer->webView(), &QGraphicsWebView::urlChanged, [viewer,client,mainWindow] (const QUrl& newUrl) {
       //Disallow navigating to pages not served by us
@@ -460,7 +460,7 @@ void BitSharesApp::prepareStartupSequence(ClientWrapper* client, Html5Viewer* vi
 
       //Rebirth of the magic unicorn: When the page is reloaded, the magic unicorn dies. Make a new one.
       viewer->webView()->page()->mainFrame()->addToJavaScriptWindowObject("application", mainWindow);
-      viewer->webView()->page()->mainFrame()->addToJavaScriptWindowObject("bitshares", client);
+      viewer->webView()->page()->mainFrame()->addToJavaScriptWindowObject("nameshares", client);
       viewer->webView()->page()->mainFrame()->addToJavaScriptWindowObject("magic_unicorn", new Utilities, QWebFrame::ScriptOwnership);
    });
    QObject::connect(viewer->webView()->page()->networkAccessManager(), &QNetworkAccessManager::authenticationRequired,
@@ -499,7 +499,7 @@ void BitSharesApp::prepareStartupSequence(ClientWrapper* client, Html5Viewer* vi
    });
 }
 
-QLocalServer* BitSharesApp::startSingleInstanceServer(MainWindow* mainWindow)
+QLocalServer* NameSharesApp::startSingleInstanceServer(MainWindow* mainWindow)
 {
    QLocalServer* singleInstanceServer = new QLocalServer();
    if (!singleInstanceServer->listen(BTS_BLOCKCHAIN_NAME))
@@ -540,7 +540,7 @@ QLocalServer* BitSharesApp::startSingleInstanceServer(MainWindow* mainWindow)
 }
 
 
-bool BitSharesApp::notify(QObject* receiver, QEvent* e)
+bool NameSharesApp::notify(QObject* receiver, QEvent* e)
 {
    APP_TRY
    {
@@ -551,18 +551,18 @@ bool BitSharesApp::notify(QObject* receiver, QEvent* e)
    return true;
 }
 
-void BitSharesApp::onExceptionCaught(const fc::exception& e)
+void NameSharesApp::onExceptionCaught(const fc::exception& e)
 {
    displayFailureInfo(e.to_detail_string());
 }
 
-void BitSharesApp::onUnknownExceptionCaught()
+void NameSharesApp::onUnknownExceptionCaught()
 {
    std::string detail("Unknown exception caught");
    displayFailureInfo(detail);
 }
 
-void BitSharesApp::displayFailureInfo(const std::string& detail)
+void NameSharesApp::displayFailureInfo(const std::string& detail)
 {
    elog("${e}", ("e", detail));
    QErrorMessage::qtHandler()->showMessage(detail.c_str());
