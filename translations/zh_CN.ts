@@ -2,19 +2,19 @@
 <!DOCTYPE TS>
 <TS version="2.0" language="zh_CN">
 <context>
-    <name>BitSharesApp</name>
+    <name>NameSharesApp</name>
     <message>
-        <location filename="../BitSharesApp.cpp" line="325"/>
+        <location filename="../NameSharesApp.cpp" line="325"/>
         <source>Adobe Application Manager Detected</source>
         <translation>检测到Adobe应用管理器</translation>
     </message>
     <message>
-        <location filename="../BitSharesApp.cpp" line="326"/>
+        <location filename="../NameSharesApp.cpp" line="326"/>
         <source>Warning: %1 has detected the Adobe Application Manager plug-in is installed on this computer at %2. This plug-in crashes when loaded into %1. Please remove this plug-in and restart %1.</source>
         <translation>警告: %1 已经检测到这台电脑安装了Adobe应用管理器插件在 %2 。这个插件在载入 %1的时候会崩溃。请移除这个插件并重新启动 %1。</translation>
     </message>
     <message>
-        <location filename="../BitSharesApp.cpp" line="455"/>
+        <location filename="../NameSharesApp.cpp" line="455"/>
         <source>Finished connecting. Launching %1</source>
         <translation>完成连接。正在装载 %1</translation>
     </message>
@@ -441,47 +441,47 @@ Memo: %4</source>
 <context>
     <name>QApplication</name>
     <message>
-        <location filename="../BitSharesApp.cpp" line="412"/>
+        <location filename="../NameSharesApp.cpp" line="412"/>
         <source>Loading configuration...</source>
         <translation>正在装载配置...</translation>
     </message>
     <message>
-        <location filename="../BitSharesApp.cpp" line="435"/>
+        <location filename="../NameSharesApp.cpp" line="435"/>
         <source>Go to My Accounts</source>
         <translation>转到我的账户</translation>
     </message>
     <message>
-        <location filename="../BitSharesApp.cpp" line="435"/>
+        <location filename="../NameSharesApp.cpp" line="435"/>
         <source>Ctrl+Shift+A</source>
         <translation>Ctrl+Shift+A</translation>
     </message>
     <message>
-        <location filename="../BitSharesApp.cpp" line="436"/>
+        <location filename="../NameSharesApp.cpp" line="436"/>
         <source>Create Account</source>
         <translation>创建账户</translation>
     </message>
     <message>
-        <location filename="../BitSharesApp.cpp" line="436"/>
+        <location filename="../NameSharesApp.cpp" line="436"/>
         <source>Ctrl+Shift+C</source>
         <translation>Ctrl+Shift+C</translation>
     </message>
     <message>
-        <location filename="../BitSharesApp.cpp" line="437"/>
+        <location filename="../NameSharesApp.cpp" line="437"/>
         <source>Import Account</source>
         <translation>导入账户</translation>
     </message>
     <message>
-        <location filename="../BitSharesApp.cpp" line="438"/>
+        <location filename="../NameSharesApp.cpp" line="438"/>
         <source>New Contact</source>
         <translation>新的联系人</translation>
     </message>
     <message>
-        <location filename="../BitSharesApp.cpp" line="438"/>
+        <location filename="../NameSharesApp.cpp" line="438"/>
         <source>Ctrl+Shift+N</source>
         <translation>Ctrl+Shift+N</translation>
     </message>
     <message>
-        <location filename="../BitSharesApp.cpp" line="476"/>
+        <location filename="../NameSharesApp.cpp" line="476"/>
         <source>Critical Error</source>
         <translation>严重错误</translation>
     </message>
